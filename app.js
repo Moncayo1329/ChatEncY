@@ -1,8 +1,25 @@
-const API_KEY = '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'
+const API_KEY = ''
 const submitButton = document.querySelector('#submit') 
 const outPutElement = document.querySelector('#output')
 const inputElement = document.querySelector('input')
 const historyElement = document.querySelector('.history')
+const buttonElement = document.querySelector('button')
+
+
+
+function changeInput(value){
+   const inputElement = document.querySelector('input')
+   inputElement.value = value
+
+
+
+}
+
+
+
+
+
+
 
 
 async function getMessage() {
@@ -36,6 +53,7 @@ try{
 if (data.choices [0].message.content){ 
     const pElement = document.createElement('p')
     pElement.textContent = inputElement.value
+    pElement.addEventListener('click', () => changeInput (pElement.textContent))
     historyElement.append(pElement)
 
 }
@@ -55,4 +73,12 @@ console.error(error)
 
 
 
+
 submitButton.addEventListener('click', getMessage)  
+
+function clearInput(){ 
+ inputElement.vlaue = ''
+
+}
+
+buttonElement.addEventListener('click', clearInput)
