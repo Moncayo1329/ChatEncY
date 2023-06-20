@@ -1,2 +1,2 @@
 # ChatEncy
-I built a chatgpt mini with javascript to play.
+I built a mini chatgpt  with javascript to play.
